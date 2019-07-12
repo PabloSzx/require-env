@@ -1,17 +1,19 @@
 ## Install
 
 ```shell
-yarn add require-env
+yarn add require-env-variable
 ```
 
+or
+
 ```shell
-npm install require-env --save
+npm install require-env-variable --save
 ```
 
 ## Usage
 
 ```typescript
-import requireEnv from "require-env";
+import requireEnv from "require-env-variable";
 
 const { NODE_ENV, SSLKEY, SSLCERT, PORT } = requireEnv([
   "NODE_ENV",
