@@ -1,6 +1,6 @@
 {
   "name": "require-env-variable",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Require specific environment variables. If they don't exist, the application exits",
   "keywords": [
     "dotenv",
