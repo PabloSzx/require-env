@@ -1,11 +1,7 @@
-export default (envVariablesArray: string[]) => {
-  const envVariables: { [envVariable: string]: string } = {};
+export default <T extends string[]>(...envVariablesArray: T): Record<T[number], string> => {
+  const envVariables: Record<T[number], string> = {} as Record<T[number], string>;
 
-  if (!Array.isArray(envVariablesArray)) {
-    console.error("Array of environment variables required");
-    return {};
-  }
-  const missingVariables = [];
+  const missingVariables: string[] = [];
   for (const v of envVariablesArray) {
     if (!process.env[v]) {
       missingVariables.push(v);

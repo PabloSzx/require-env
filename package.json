@@ -23,10 +23,12 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "microbundle",
-    "dev": "microbundle watch"
+    "dev": "microbundle watch",
+    "prepublish": "microbundle"
   },
   "dependencies": {},
   "devDependencies": {
+    "@types/node": "^12.12.14",
     "microbundle": "^0.12.0-next.3",
     "typescript": "^3.5.3"
   }
