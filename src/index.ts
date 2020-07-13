@@ -9,13 +9,16 @@ export function requireEnv<T extends string[]>(
   >;
 
   const missingVariables: string[] = [];
-  for (const v of envVariablesArray) {
-    const envV = process.env[v];
-    if (!envV) {
-      missingVariables.push(v);
+  for (const name of envVariablesArray) {
+    const value = process.env[name];
+    if (!value) {
+      missingVariables.push(name);
       continue;
     }
-    envVariables[v] = envV;
+
+    Object.defineProperty(envVariables, name, {
+      value,
+    });
   }
 
   if (missingVariables.length) {
