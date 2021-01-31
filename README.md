@@ -13,7 +13,7 @@ npm install require-env-variable
 ## Usage
 
 ```typescript
-import requireEnv from "require-env-variable";
+import { requireEnv } from "require-env-variable";
 
 const { NODE_ENV, SSLKEY, SSLCERT, PORT } = requireEnv(
   "NODE_ENV",
