@@ -1,6 +1,6 @@
 {
   "name": "require-env-variable",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "Require specific environment variables. If they don't exist, the application exits",
   "keywords": [
     "dotenv",
@@ -15,7 +15,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
-  "module": "dist/index.m.js",
+  "module": "dist/index.modern.js",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
   "files": [
@@ -24,16 +24,17 @@
   "scripts": {
     "build": "microbundle --target node",
     "dev": "microbundle watch --target node",
-    "prepublish": "rm -rf dist && microbundle --target node",
+    "prepare": "rimraf dist && microbundle --target node",
     "test": "ts-node test.ts"
   },
   "dependencies": {
     "colors": "^1.4.0"
   },
   "devDependencies": {
-    "@types/node": "^14.0.22",
-    "microbundle": "^0.12.2",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.6"
+    "@types/node": "^14.14.22",
+    "microbundle": "^0.13.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
   }
 }

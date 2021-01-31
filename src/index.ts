@@ -40,5 +40,3 @@ export function requireEnv<T extends string[]>(
 
   return envVariables;
 }
-
-export default requireEnv;
